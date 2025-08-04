@@ -9,8 +9,8 @@ The CHUK Avenue dataset is also available at http://www.cse.cuhk.edu.hk/leojia/p
 The Shanghai Tech video dataset containing all training and testing samples is available at https://mha.cs.umn.edu/proj_events.shtml#crowd.
 
 # Requirements
-pytorch 2.1 or later
-pytorch_msssim
+pytorch 2.1 or later/
+pytorch_msssim\
 StepLR
 collections
 einops
