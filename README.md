@@ -1,14 +1,14 @@
 # LVit
 # Feature Aligned Linear Attention-Pixel Shuffle Autoencoder for Visual Anomaly Detection
 
-#Datasets used this work:
+# Datasets used this work:
 The UCSD datasets are available publicly at http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm.
 
 The CHUK Avenue dataset is also available at http://www.cse.cuhk.edu.hk/leojia/projects/detectabnormal/dataset.html.
 
 The Shanghai Tech video dataset containing all training and testing samples is available at https://mha.cs.umn.edu/proj_events.shtml#crowd.
 
-#Requirements
+# Requirements
 pytorch 2.1 or later
 pytorch_msssim
 StepLR
@@ -16,7 +16,7 @@ collections
 einops
 tqdm
 
-#Description
+# Description
 We provide the utlility model file as "LViT.ipynb" and the model file as "model.ipnyb"
 Training parameters:
 embedding_dimesion = "512"
