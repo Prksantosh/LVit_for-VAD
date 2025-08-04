@@ -6,7 +6,7 @@ The UCSD datasets are available publicly at http://www.svcl.ucsd.edu/projects/an
 
 The CHUK Avenue dataset is also available at http://www.cse.cuhk.edu.hk/leojia/projects/detectabnormal/dataset.html.
 
-The Shanghai Tech video dataset containing all training and testing samples is available at https://mha.cs.umn.edu/proj_events.shtml#crowd.
+The Ubnormal video dataset containing all training and testing samples is available at [https://mha.cs.umn.edu/proj_events.shtml#crowd.](https://github.com/lilygeorgescu/UBnormal)
 
 # Requirements
 pytorch 2.1 or later\
