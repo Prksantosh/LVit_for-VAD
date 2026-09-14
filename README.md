@@ -1,4 +1,3 @@
-# LVit
 # Feature Aligned Linear Attention-Pixel Shuffle Autoencoder for Visual Anomaly Detection
 
 # Datasets used this work:
