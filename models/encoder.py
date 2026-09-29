@@ -1,35 +1,14 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Sep 26 15:34:41 2026
-
-@author: USER
-"""
-
 from __future__ import annotations
 
-#from dataclasses import dataclass
 from typing import List, Sequence, Tuple, Optional
-#import math
+
 
 import torch
 import torch.nn as nn
-#import torch.nn.functional as F
+
 from models.LVit import LinearTransformerBlock
 
-# -----------------------------------------------------------------------------
-# 3. LViT encoder for reconstruction (no classifier / no CLS token)
-# -----------------------------------------------------------------------------
 class LViTEncoder(nn.Module):
-    """
-    Stack of corrected linear transformer blocks.
-
-    Returns:
-        final_tokens: normalized output of the last block
-        skip_tokens:  selected intermediate block outputs for FASC
-
-    All skip features preserve the token grid; FASC performs stage-specific
-    channel projection and spatial alignment for the decoder.
-    """
 
     def __init__(
         self,
