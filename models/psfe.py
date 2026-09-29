@@ -1,26 +1,14 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Sep 26 15:35:39 2026
-
-@author: USER
-"""
-
 from __future__ import annotations
-
-#from dataclasses import dataclass
-#from typing import List, Sequence, Tuple, Optional
-#import math
 
 import torch
 import torch.nn as nn
-#import torch.nn.functional as F
 
 def _make_norm_2d(channels: int, norm: str = "batch") -> nn.Module:
     norm = norm.lower()
     if norm == "batch":
         return nn.BatchNorm2d(channels)
     if norm == "group":
-        # Choose a valid number of groups while keeping groups reasonably small.
+    
         groups = min(8, channels)
         while channels % groups != 0:
             groups -= 1
