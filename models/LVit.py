@@ -1,24 +1,5 @@
-"""
-Feature-Aligned Linear-Attention Pixel-Shuffle Autoencoder (updated implementation)
-
-Core pipeline preserved:
-    Input frame
-      -> Progressive Patch Embedding
-      -> Corrected Linear Transformer Block x L
-      -> LViT encoder features
-      -> Feature-Aligned Skip Connections (FASC)
-      -> Progressive Pixel-Shuffle Feature Expansion (PSFE) Decoder
-      -> Reconstructed frame
-
-The linear-attention implementation never materializes an N x N attention matrix.
-It computes K^T V first and then Q(K^T V), with positive kernel feature maps
-and the corresponding normalization denominator.
-"""
-
 from __future__ import annotations
 
-#from dataclasses import dataclass
-#from typing import List, Sequence, Tuple, Optional
 import math
 
 import torch
