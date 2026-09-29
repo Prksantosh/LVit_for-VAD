@@ -28,8 +28,8 @@ from datasets.dataset import (
 
 class TrainConfig:
     # ---------------- Dataset ----------------
-    OFFICIAL_TRAIN_DIR = Path(r"C:\Users\USER\Desktop\MGST_All\eidetic_vad-main\eidetic_vad-main_Shanghaitech\data\Shanghai_train")
-    OFFICIAL_TEST_DIR = Path(r"./data/test")  # safety check only; never loaded
+    OFFICIAL_TRAIN_DIR = Path(".data/train")
+    OFFICIAL_TEST_DIR = Path("./data/test")  # safety check only; never loaded
 
     IMAGE_SIZE = (256, 256)
     TRAIN_RATIO = 0.90
