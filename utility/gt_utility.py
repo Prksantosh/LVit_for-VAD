@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 28 09:13:51 2026
-
-@author: USER
-"""
-
 from pathlib import Path
 import numpy as np
 
@@ -13,8 +6,8 @@ import numpy as np
 # Configuration
 # ============================================================
 
-TEST_DIR = Path(r"C:\Users\USER\Desktop\LVit\data\test")
-LABEL_DIR = Path(r"C:\Users\USER\Desktop\LVit\data\test\test_labels")
+TEST_DIR = Path("./data/test")
+LABEL_DIR = Path("./data/test/test_labels")
 
 IMAGE_EXTENSIONS = {
     ".jpg",
@@ -30,16 +23,6 @@ LABEL_DIR.mkdir(
     exist_ok=True
 )
 
-
-# ============================================================
-# Define abnormal frame ranges
-#
-# IMPORTANT:
-# These are 1-based frame numbers.
-#
-# Example:
-# (61, 95) means frames 61 through 95 are abnormal.
-# ============================================================
 
 ANOMALY_RANGES = {
 
@@ -60,9 +43,6 @@ ANOMALY_RANGES = {
 }
 
 
-# ============================================================
-# Helper
-# ============================================================
 
 def get_frames(video_dir):
 
@@ -79,9 +59,6 @@ def get_frames(video_dir):
     return frames
 
 
-# ============================================================
-# Create labels
-# ============================================================
 
 for video_dir in sorted(TEST_DIR.iterdir()):
 
@@ -102,9 +79,7 @@ for video_dir in sorted(TEST_DIR.iterdir()):
         continue
 
 
-    # ----------------------------------------
-    # Initially every frame is NORMAL
-    # ----------------------------------------
+
 
     labels = np.zeros(
         num_frames,
@@ -112,9 +87,7 @@ for video_dir in sorted(TEST_DIR.iterdir()):
     )
 
 
-    # ----------------------------------------
-    # Get abnormal ranges
-    # ----------------------------------------
+
 
     ranges = ANOMALY_RANGES.get(
         video_name,
