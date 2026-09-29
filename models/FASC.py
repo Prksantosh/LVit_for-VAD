@@ -1,14 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Sep 26 15:42:06 2026
-
-@author: USER
-"""
 from __future__ import annotations
-
-#from dataclasses import dataclass
-#from typing import List, Sequence, Tuple, Optional
-#import math
 
 import torch
 import torch.nn as nn
@@ -31,18 +21,7 @@ def _make_norm_2d(channels: int, norm: str = "batch") -> nn.Module:
 # 4. Feature-Aligned Skip Connection (FASC)
 # -----------------------------------------------------------------------------
 class FeatureAlignedSkipConnection(nn.Module):
-    """
-    Dynamic projection + spatial alignment + local spatial refinement.
 
-    Steps:
-      1) Token/channel projection: D_encoder -> C_decoder
-      2) Reshape regular-grid tokens to 2-D feature map
-      3) Bilinear spatial alignment to current decoder resolution
-      4) Residual local refinement modulated by a spatial gate
-
-    This keeps the FASC role in the paper while making the refinement fully
-    channel-compatible (unlike broadcasting a single-channel residual).
-    """
 
     def __init__(
         self,
