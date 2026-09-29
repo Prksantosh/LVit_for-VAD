@@ -1,42 +1,5 @@
 from __future__ import annotations
 
-"""
-FALAPS frame-level testing/evaluation using PSNR anomaly scoring.
-
-PSNR for normalized [0,1] images:
-    PSNR_t = 10 * log10(1 / (MSE_t + eps))
-
-Frame anomaly score:
-    score_t = 1 - minmax_normalize(PSNR_t)
-
-Thus:
-    high PSNR -> good reconstruction -> low anomaly score
-    low PSNR  -> poor reconstruction -> high anomaly score
-
-Outputs:
-    - Average PSNR
-    - Frame-level ROC-AUC
-    - Frame-level EER
-    - Per-video frame metrics CSV
-    - Target frames
-    - Reconstructed frames
-    - Error frames
-    - Heatmap frames
-    - Overlay frames
-    - Per-video normalized anomaly-score plots
-    - Combined diagnostic panels
-
-Expected test layout:
-    ./data/test/video_01/000001.jpg ...
-    ./data/test/video_02/000001.jpg ...
-
-Ground truth options:
-A) ./data/test_labels/video_01.npy  (1-D 0/1 vector)
-   .txt and .csv are also supported.
-B) ./data/test_labels/video_01/<binary mask frames>
-   A frame is anomalous if its mask contains any non-zero pixel.
-"""
-
 import csv
 import json
 from dataclasses import dataclass
