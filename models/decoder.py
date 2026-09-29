@@ -1,19 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Sep 26 15:36:30 2026
-
-@author: USER
-"""
-
 from __future__ import annotations
 
-#from dataclasses import dataclass
-#from typing import List, Sequence, Tuple, Optional
-#import math
 
 import torch
 import torch.nn as nn
-#import torch.nn.functional as F
 from models.psfe import PixelShuffleFeatureExpansion
 from models.FASC import FeatureAlignedSkipConnection
 
@@ -22,7 +11,6 @@ def _make_norm_2d(channels: int, norm: str = "batch") -> nn.Module:
     if norm == "batch":
         return nn.BatchNorm2d(channels)
     if norm == "group":
-        # Choose a valid number of groups while keeping groups reasonably small.
         groups = min(8, channels)
         while channels % groups != 0:
             groups -= 1
@@ -31,14 +19,6 @@ def _make_norm_2d(channels: int, norm: str = "batch") -> nn.Module:
 
 
 class ProgressivePixelShuffleDecoder(nn.Module):
-    """
-    Five x2 PSFE stages for the default 8x8 -> 256x256 reconstruction path.
-
-    Four FASC connections are fused at decoder stages 1..4. The final stage is
-    intentionally skip-free so the output must be synthesized from the decoder
-    representation rather than receiving a direct high-resolution bypass.
-    """
-
     def __init__(
         self,
         embed_dim: int = 512,
