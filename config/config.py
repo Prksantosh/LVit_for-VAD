@@ -1,23 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Sep 26 15:37:22 2026
-
-@author: USER
-"""
-
 from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Tuple #, Optional,List, Sequence
-#import math
 
-#import torch
-#import torch.nn as nn
-#import torch.nn.functional as F
-
-# -----------------------------------------------------------------------------
-# 6. Complete model
-# -----------------------------------------------------------------------------
 @dataclass
 class FALAPSConfig:
     img_size: int = 256
