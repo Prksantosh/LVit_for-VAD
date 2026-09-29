@@ -1,20 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Sep 26 15:38:02 2026
-
-@author: USER
-"""
-
 from __future__ import annotations
 
-#from dataclasses import dataclass
 from typing import List, Sequence, Tuple, Optional
-#import math
 
 import torch
 import torch.nn as nn
-#import torch.nn.functional as F
-
 
 from config.config import FALAPSConfig
 from models.LVit import ProgressivePatchEmbedding
